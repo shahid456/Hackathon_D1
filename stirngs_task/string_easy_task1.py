@@ -7,18 +7,20 @@ class Solution:
         upd_emails=[]
         for email in emails:
             temp=""
+            temp1=""
             atr=email.find('@')
             temp=email[0:atr]
             x=0
             l=len(temp)
             while x<l:
                 if temp[x]=='.':
-                    temp.replace('.','',1)
+                    temp=temp.replace('.','',1)
                 if temp[x]=='+':
                     break
                 x=x+1
             temp=temp[0:x]
             temp1=email[atr:len(email)]
+            temp1=temp+temp1
             if temp1 in upd_emails:
                 pass
             else:
